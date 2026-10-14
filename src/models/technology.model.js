@@ -1,0 +1,23 @@
+// * ARCHIVO A COMPLETAR
+import { DataTypes } from "sequelize";
+import { sequelize } from "../config/db.js";
+
+export const TechnologyModel = sequelize.define("Technology", {
+  // TODO: 1. name: string, único y obligatorio.
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true,
+  },
+  name: {
+    type: DataTypes.STRING(100),
+    unique: true,
+    allowNull: false,
+  },
+
+  // TODO: 2. description: texto, opcional.
+  description: {
+    type: DataTypes.TEXT(),
+    allowNull: false,
+  },
+});
