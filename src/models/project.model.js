@@ -28,12 +28,12 @@ export const ProjectModel = sequelize.define("Project", {
   },
   // TODO: 4. status: ENUM con los valores planning, in_progress, paused y finished; obligatorio y con planning como valor por defecto.
   status: {
-    type: DataTypes.ENUM("planning", "in_progress", "finished"),
+    type: DataTypes.ENUM("planning", "in_progress", "paused", "finished"),
     defaultValue: "planning",
     allowNull: false,
   },
   // TODO: 5. start_date: fecha (solo día), obligatoria.
-  fecha: {
+  start_date: {
     type: DataTypes.DATEONLY(),
     allowNull: false,
   },

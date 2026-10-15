@@ -15,7 +15,7 @@ export const createProject = async (req, res) => {
     // TODO: 3. Responder con código 201 y el project con sus technologies y su leader.
   } catch (error) {
     console.log(error);
-    return res.status(500).json({ msg: "Error interno del servidor" });
+    return res.status(500).json({ msg: "Error interno del servidor", project });
   }
 };
 
