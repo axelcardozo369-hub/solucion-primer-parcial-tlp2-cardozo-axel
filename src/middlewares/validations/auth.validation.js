@@ -56,15 +56,15 @@ export const registerValidation = [
     })
     .custom(async () => {}),
   // TODO: 6. Validar profile.first_name y profile.last_name como obligatorios, y profile.phone como opcional.
-  body(" profile.first_name ")
+  body("profile.first_name")
     .notEmpty()
     .withMessage("el first_name debe ser obligatorio")
     .bail(),
-  body("profile.last_name ")
+  body("profile.last_name")
     .notEmpty()
     .withMessage("el last_name debe ser obligatorio")
     .bail(),
-  body("profile.phone ")
+  body("profile.phone")
     .optional()
     .notEmpty()
     .withMessage("el phone debe ser obligatorio"),
@@ -78,13 +78,7 @@ export const loginValidation = [
     .withMessage("el email debe ser obligatorio")
     .bail()
     .isEmail()
-    .withMessage("el email debe ser valido")
-    .custom(async (email) => {
-      const emailExiste = await UserModel.findOne({ where: { email: email } });
-      if (emailExiste) {
-        throw new Error("el email ya tiene uso");
-      }
-    }),
+    .withMessage("el email debe ser valido"),
   // TODO: 8. Validar password: obligatoria.-
   body("password").notEmpty().withMessage("el password debe ser obligatoria"),
 ];
