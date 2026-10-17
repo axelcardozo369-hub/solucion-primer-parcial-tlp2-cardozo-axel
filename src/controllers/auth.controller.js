@@ -61,8 +61,8 @@ export const login = async (req, res) => {
     }
     // TODO: 2. Firmar un JWT con el id y el role del user (signToken).
     const token = signToken({
-      userId: userExiste.id,
-      userRole: userExiste.role,
+      id: userExiste.id,
+      role: userExiste.role,
     });
     // TODO: 3. Guardar el token en una cookie httpOnly llamada "token", responder con código 200 y un mensaje de éxito.
     return res
